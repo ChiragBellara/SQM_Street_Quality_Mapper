@@ -1,4 +1,4 @@
-# SQUID
+# SQM
 
 Configuration of raspberrypi for running the accelerometer code:
 Execute the following commands on the terminal after basic configuration
