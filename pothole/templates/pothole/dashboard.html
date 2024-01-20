@@ -1,0 +1,39 @@
+
+{% extends 'pothole/base.html' %}
+{% load staticfiles %}
+{% block dashboard %}active{% endblock %}
+{% block content %}
+<div class="pcoded-inner-content">
+                <!-- Main-body start -->
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- Page-body start -->
+                        <div class="page-body">
+                            <div class="row">
+                                <!--  project and team member start -->
+                                <div class="col-xl-12 col-md-12">
+                                    <div class="card table-card">
+                                        <div class="card-header">
+                                            <h5>Dashboard</h5>
+                                            <div class="card-header-right">
+                                                <ul class="list-unstyled card-option">
+                                                    <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                                    <li><i class="fa fa-window-maximize full-card"></i></li>
+                                                    <li><i class="fa fa-minus minimize-card"></i></li>
+                                                    <li><i class="fa fa-refresh reload-card"></i></li>
+                                                    <li><i class="fa fa-trash close-card"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <!--  project and team member end -->
+                            </div>
+                        </div>
+                        <!-- Page-body end -->
+                    </div>
+                    <div id="styleSelector"> </div>
+                </div>
+</div>
+{% endblock content %}  

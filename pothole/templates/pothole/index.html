@@ -1,0 +1,403 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+  <!-- Mobile Specific Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="{% static 'land/img/logo.png' %}">
+  
+  <!-- meta character set -->
+  <meta charset="UTF-8">
+  <!-- Site Title -->
+  <title>Squid</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,500,600" rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+    
+    <link rel="stylesheet" href="{% static 'land/css/main.css' %}">
+    <!--
+    Smooth Scroll JS
+    ============================================= -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+       
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+    </script>
+      <style>
+      /* Full-width input fields */
+      :focus{
+         outline:0;
+      }
+      input[type=text], input[type=password] {
+          width: 100%;
+          padding: 5px;
+          margin: 8px 0;
+          display: inline;
+          border: none;
+          border-bottom: 1px solid #ccc;
+          box-sizing: border-box;
+          transition: all 1s ease;
+      }
+      input[type=text]:focus, input[type=password]:focus{
+          box-shadow: 1px 2px 0px grey;
+          transform: translateY(-5px);
+      }
+      /* Extra styles for the cancel button */
+      .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: #f44336;
+      }
+
+      /* Center the image and position the close button */
+      .imgcontainer {
+          text-align: center;
+          margin: 24px 0 12px 0;
+          position: relative;
+      }
+
+      img.avatar {
+          width: 40%;
+          border-radius: 50%;
+      }
+
+      .container {
+          padding: 16px;
+      }
+
+      span.psw {
+          float: right;
+          padding-top: 16px;
+      }
+
+      /* The Modal (background) */
+      .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: hidden; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+          padding-top: 60px;
+      }
+
+      /* Modal Content/Box */
+      .modal-content {
+          background-color: #fefefe;
+          margin: 10% auto 25% auto; /* 5% from the top, 15% from the bottom and centered */
+          border: 1px solid #888;
+          border-radius: 10px;
+          width: 40%; /* Could be more or less, depending on screen size */
+      }
+
+      /* The Close Button (x) */
+      .close {
+          position: absolute;
+          right: 25px;
+          top: 0;
+          color: #000;
+          font-size: 35px;
+          font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+          color: red;
+          cursor: pointer;
+      }
+
+      /* Add Zoom Animation */
+      .animate {
+          -webkit-animation: animatezoom 0.6s;
+          animation: animatezoom 0.6s
+      }
+
+      @-webkit-keyframes animatezoom {
+          from {-webkit-transform: scale(0)} 
+          to {-webkit-transform: scale(1)}
+      }
+          
+      @keyframes animatezoom {
+          from {transform: scale(0)} 
+          to {transform: scale(1)}
+      }
+
+      /* Change styles for span and cancel button on extra small screens */
+      @media screen and (max-width: 300px) {
+          span.psw {
+             display: block;
+             float: none;
+          }
+          .cancelbtn {
+             width: 100%;
+          }
+      }
+      </style>
+  </head>
+  <body>
+    <div id="top"></div>
+    <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- Start Header Area -->
+    <header class="default-header">
+      <div class="sticky-header">
+        <div class="container">
+          <div class="header-content d-flex justify-content-between align-items-center">
+            <div class="logo">
+              <a href="#top" class="smooth"><img src="{% static 'land/img/logo.png' %}" alt="" height="100" width="100"></a>
+            </div>
+            <div class="right-bar d-flex align-items-center">
+              <nav class="d-flex align-items-center">
+                <ul class="main-menu">
+                  <li><a href="#top">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#team">Team</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                  <li><p><a class="login-button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><font color="white" size="3px">LogIn</font></a></p></li>
+                </ul>
+                <a href="#" class="mobile-btn"><span class="lnr lnr-menu"></span></a>
+              </nav>
+              
+              <div class="header-social d-flex align-items-center">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- End Header Area -->
+    <div id="id01" class="modal">
+      
+      <form class="modal-content animate" method="POST" action="/login">
+        {% csrf_token %}
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3jckKIP74XqmpQnmJThxp-nSGMcXFuZVisp12G5tJ4P1Cw0ERVA" alt="Avatar" class="avatar"> -->
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" name="username" id="username" placeholder="Username" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Password" id="password" name="password" required>
+            
+          <button class="login-button" type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
+    <!-- Start Banner Area -->
+    <section class="banner-area relative skewed">
+      <div class="overlay overlay-bg"></div>
+      <div class="container">
+        <div class="row fullscreen justify-content-center align-items-center">
+          <div class="col-lg-8">
+            <div class="banner-content text-center">
+              <p class="text-uppercase text-white">Transforming roads maintainance</p>
+              <h1 class="text-uppercase text-white">Street Quality Identification</h1>
+              <a href="#about" class="primary-btn banner-btn">Explore Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Banner Area -->
+    <!-- Start About Area -->
+    <section id="about" class="section-full">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="section-title text-center">
+              <p class="text-uppercase"><h2 class="h1">About Squid <hr></h2>
+              <br></p>
+              <h3>Street QUality IDentification is a go-to built keeping in mind the issues 53,720 vehicles face who hit the streets every single day, as indicated by the statistics in an article by The Times Of India.SQUID enables a comprehensive map of a city’s street surface quality and portrays a bird’s eye view of the streets, enabling the admin to monitor the conditions in real time(pothole complications) and take informed decisions for the development and improvement of the street quality</h3>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+        </div>
+      </div>
+    </section>
+
+    <!-- Start Contact Area -->
+    <section id="contact" class="section-full">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="product-area-title text-center">
+              <p class="text-uppercase">Latest From Blog</p>
+              <h2 class="h1">Publish what you want to <br> not requires social</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 mt-30">
+            <p>Dramatically reintermediate effective applications after high-payoff core competencies. Authoritatively optimize collaborative benefits for error-free communities. Dramatically reintermediate effective applications after high-payoff core competencies. Authoritatively optimize collaborative benefits for error-free communities.</p>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="address mt-20">
+                  <h6 class="text-uppercase mb-15">Physical Address</h6>
+                  <p>Samarth Complex,<br> A-201, Jawahar nagar road, <br> Mumbai  - 400 062</p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="address mt-20">
+                  <h6 class="text-uppercase mb-15">WEb Contact</h6>
+                  <a href="tel:9769831397">+91 9769 831 397</a> <br>
+                  <a href="tel:0000">012 (88) 017 25 656 565</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 mt-30">
+            <form id="myForm" method="post" class="contact-form">
+              <div class="single-input color-2 mb-10">
+                <input type="text" name="fname" placeholder="Full Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Full Name'" required>
+              </div>
+              <div class="single-input color-2 mb-10">
+                <input type="email" name="email" placeholder="Email Address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address'" required>
+              </div>
+              <div class="single-input color-2 mb-10">
+                <input type="text" name="subject" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'" required>
+              </div>
+
+              <div class="single-input color-2 mb-10">
+                <textarea name="message" placeholder="Type your message here..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type your message here...'" required></textarea>
+              </div>
+              <div class="d-flex justify-content-end"><button class="mt-10 primary-btn d-inline-flex text-uppercase align-items-center">Send Message<span class="lnr lnr-arrow-right"></span></button></div>
+              <div class="alert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Area -->
+    
+    <footer class="section-full">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-6">
+            <div class="single-footer-widget">
+              <h6 class="text-white text-uppercase mb-20">About Agency</h6>
+              <p>The world has become so fast paced that people don’t want to stand by reading a page of information, they would much rather look at a presentation and understand the message. It has come to a point </p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="single-footer-widget">
+              <h6 class="text-white text-uppercase mb-20">Navigation Links</h6>
+              <div class="d-flex">
+                <ul class="footer-nav">
+                  <li><a href="#top">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#team">Team</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+                <!--ul class="ml-30 footer-nav">
+                  <li><a href="#">Team</a></li>
+                  <li><a href="#">Pricing</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+                </ul-->
+              </div>
+            </div>
+          </div>
+          <hr style="height: 20vh;width: 1px;background: white;color: white;">
+          <div class="col-lg-4 col-sm-6">
+            <div class="single-footer-widget">
+              <h6 class="text-white text-uppercase mb-20">Newsletter</h6>
+              
+              <div id="mc_embed_signup">
+                <form target="_blank" novalidate action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&id=92a4423d01" method="get" class="subscription relative d-flex justify-content-center">
+                  <input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required>
+                  <div style="position: absolute; left: -5000px;">
+                    <input type="text" name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="">
+                  </div>
+                  <button type="submit" class="newsletter-btn" name="subscribe"><span class="lnr lnr-location"></span></button>
+                  <!--div class="info"></div-->
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-bottom d-flex justify-content-between align-items-center">
+          <p class="footer-text m-0">Copyright &copy; 2018  |  All rights reserved to <a href="#">SQUID.</a> Designed by <a href="#">Bitcoders</a>.</p>
+          <div class="footer-social d-flex align-items-center">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-behance"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--script src="js/vendor/jquery-2.2.4.min.js"></script-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="{% static 'land/js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'land/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'land/js/jquery.sticky.min.js' %}"></script>
+    <script src="{% static 'land/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'land/js/mixitup.min.js' %}"></script>
+    <script src="{% static 'land/js/main.js' %}"></script>
+    <script type="text/javascript">
+      // ===== Scroll to Top ==== 
+      $(window).scroll(function() {
+          if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+              $('#return-to-top').fadeIn(200);    // Fade in the arrow
+          } else {
+              $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+          }
+      });
+      $('#return-to-top').click(function() {      // When arrow is clicked
+          $('body,html').animate({
+              scrollTop : 0                       // Scroll to top of body
+          }, 500);
+      });
+    </script>
+  </body>
+</html>

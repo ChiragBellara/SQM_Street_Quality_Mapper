@@ -1,0 +1,226 @@
+
+{% extends 'pothole/base.html' %}
+{% load staticfiles %}
+{% block pothole %}active{% endblock %}
+{% block content %}
+<style>
+/* .label-xsmall {
+  vertical-align: super;
+  font-size: x-small;
+}
+
+.label-small {
+  vertical-align: super;
+  font-size: small;
+}
+*/
+.label-medium {
+  vertical-align: super;
+  font-size: small;
+} 
+
+.label-large {
+  vertical-align: super;
+  font-size: medium;
+}
+
+.label-bs {
+  vertical-align: super;
+}
+</style>            
+<div class="pcoded-inner-content">
+    <!-- Main-body start -->
+    <div class="main-body">
+        <div class="page-wrapper">
+            <!-- Page-body start -->
+            <div class="page-body">
+                <div class="row">
+                    <!--  project and team member start -->
+                    <div class="col-xl-12 col-md-12">
+                        <div class="card table-card">
+                            <div class="card-header">
+                                <h5>Potholes nearby</h5>
+                                <div class="card-header-right">
+                                    <ul class="list-unstyled card-option">
+                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                        <li><i class="fa fa-trash close-card"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th>Pothole</th>
+                                            <!-- <th>Lattitude</th> -->
+                                            <!-- <th>Longitude</th> -->
+                                            <th>Detected on</th>
+                                            <th>Latitude</th>
+                                            <th>Longitude</th>
+                                            <th>Score</th>
+                                            <!-- <th>Photographs</th> -->
+                                            <th>Priority</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for j in final_data %}
+                                        
+                                        <tr>
+                                            <td>
+                                                <!--  <div class="chk-option">
+                                                    <div class="checkbox-fade fade-in-primary">
+                                                        <label class="check-task">
+                                                            <input type="checkbox" value="">
+                                                            <span class="cr">
+                                                                        <i class="cr-icon fa fa-check txt-default"></i>
+                                                                    </span>
+                                                        </label>
+                                                    </div>
+                                                </div> -->
+                                                <div class="d-inline-block align-middle">
+                                                    
+                                                    <div class="d-inline-block">
+                                                        <h6>{{forloop.counter}}</h6>
+                                                        <!-- <p class="text-muted m-b-0">Graphics Designer</p> -->
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <!-- <td>Able Pro</td> -->
+                                            <!-- <td>Jun, 26</td> -->
+                                            <td>{{j.0}}</td>
+                                            <td>{{j.1}}</td>
+                                            <td>{{j.2}}</td>
+                                            <td>{{j.3}}</td>
+                                            <!-- <td><img src="{% static 'assets/images/avatar-4.jpg' %}" alt="user image" class="img-radius img-40 align-top m-r-15"></td> -->
+                                            <td>
+                                                {% if j.4 == "High" %}    
+                                                <label class="label label-danger label-medium" style="background-color:red;color: white;">{{j.4}}</label>
+                                                {% elif j.4 == "Medium" %}
+                                                <label class="label label-warning label-medium" style="background-color:yellow;color: white;">{{j.4}}</label>
+                                                {% else %}
+                                                <label class="label label-success label-medium" style="background-color:green;color: white;">{{j.4}}</label>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        <!-- <script type="text/javascript">
+                                            // function bgcolor(){
+                                            //     var doc = document.getElementById("td");
+                                            //     var data = document.getElementById("td").innerHTML;
+                                            //     if (data=="High"){
+                                            //         td.
+                                            //     }
+                                            // }
+                                            // function bbc() {
+                                                var td = document.getElementById("{{j.3}}");
+                                                // console.log(td);
+                                                // for(i=0;i<td.length;i++){
+                                                    var data = document.getElementById("{{j.3}}").innerHTML;
+                                                    console.log("This is data bleh: "+data);
+                                                    if(td.innerHTML == "High"){
+                                                        td.style.backgroundColor = "red";
+                                                        td.style.color = "white";
+                                                        // td.style.color = "yellow";
+                                                        //td.style.size = 48px;
+                                                    }
+                                                    else if(data == "Medium"){
+                                                        td.style.backgroundColor = "yellow";
+                                                        td.style.color = "white";
+                                                        // td.style.color = "white";
+                                                    }
+                                                    else if(data == "Low"){
+                                                        td.style.backgroundColor = "green";
+                                                        td.style.color = "white";
+                                                        // td.style.color = "white";
+                                                    }
+                                                    else{
+                                                        td.style.backgroundColor = "black";
+                                                        td.style.color = "white";
+                                                    }                
+                                                // }
+                                                // td.style.backgroundColor="red";
+                                            // }
+                                            
+                                        </script> -->
+                                        {% endfor %}
+
+                                        
+                                        
+                                        </tbody>
+                                        <!--<tbody>
+                                        <tr>
+                                            <td>
+                                                
+                                                <div class="d-inline-block align-middle">
+                                                    
+                                                    <div class="d-inline-block">
+                                                        <h6>1</h6>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            
+                                            <td>Timestamp</td>
+                                            <td>Bredth</td>
+                                            <td>Depth</td>
+                                            
+                                            <td><label class="label label-danger">high</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                
+                                                <div class="d-inline-block align-middle">
+                                                    <div class="d-inline-block">
+                                                        <h6>2</h6>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            
+                                            <td>Timestamp</td>
+                                            <td>Bredth</td>
+                                            <td>Depth</td>
+                                            
+                                            <td><label class="label label-primary">low</label></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                
+                                                <div class="d-inline-block align-middle">
+                                                    
+                                                    <div class="d-inline-block">
+                                                        <h6>3</h6>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            
+                                            <td>Timestamp</td>
+                                            <td>Bredth</td>
+                                            <td>Depth</td>
+                                            
+                                            <td><label class="label label-success">medium</label></td>
+                                        </tr>
+                                        
+                                        </tbody>-->
+                                    </table>
+                                    <div class="text-right m-r-20">
+                                        <a href="/locations" class=" b-b-primary text-primary" style="text-decoration: none;">View on map</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  project and team member end -->
+                </div>
+            </div>
+            <!-- Page-body end -->
+        </div>
+        <div id="styleSelector"> </div>
+    </div>                
+</div>
+{% endblock content %}   

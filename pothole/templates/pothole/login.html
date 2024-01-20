@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>COOL LOGIN!!!</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+	
+	
+</head>
+<body>
+	<!--video autoplay muted loop id="myVideo">
+	  <source src="bg2.mp4" type="video/mp4">
+	  Your browser does not support HTML5 video.
+	</video-->
+	<div id="logo"> 
+	  <h1><i> LOGIN TO SQUID</i></h1>
+	</div> 
+	<div class="login" style="margin:0 auto;top:400px;height:0px;width: 500px;background-color: rgba(0,0,0,.1);">
+	  
+	    <form method="POST" action="/authenticate">
+	     {% csrf_token %}	
+		    <div id="fade-box">
+	      		<input type="text" name="username" id="username" placeholder="Username" required>
+	      		<input type="password" placeholder="Password" id="password" name="password" required>
+		          
+	      		<button><i class="fa fa-sign-out"></i>&nbsp;&nbsp;Log In</button> 
+		    </div>
+	    </form>         
+	</div>
+		         
+    <div id="circle1">
+      <div id="inner-cirlce1">
+        <h2> </h2>
+      </div>
+    </div>
+    <img src="{% static 'images/bg.png' %}" class="img1">
+
+	<script src="/static/js/login.js"></script>
+	
+</body>
+</html>

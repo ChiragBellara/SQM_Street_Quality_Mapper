@@ -1,0 +1,321 @@
+@import "https://fonts.googleapis.com/css?family=Ubuntu:400,700italic";
+@import "https://fonts.googleapis.com/css?family=Cabin:400";
+* {
+  box-sizing: border-box; }
+
+html {
+  background-size: cover;
+  background: #FFF;
+  background-image: url(images/bg-smooth.png);
+  font-size: 10px;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  width: 100%; }
+.img1 {
+  display: none;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+/*
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -10;
+    opacity: 0.5;
+}*/
+/* =========================================
+ Logo
+========================================= */
+#logo {
+  animation: logo-entry 4s ease-in;
+  width: 500px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 40; }
+
+h1 {
+  animation: text-glow 2s ease-out infinite alternate;
+  font-family: 'Ubuntu', sans-serif;
+  color: #000def;
+  font-size: 50px;
+  font-size: 5.0rem;
+  font-weight: bold;
+  position: absolute;
+  text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000;
+  top: 50px; }
+  h1:before {
+    animation: before-glow 2s ease-out infinite alternate;
+    border-left: 535px solid transparent;
+    border-bottom: 10px solid #000fff;
+    content: ' ';
+    height: 0;
+    position: absolute;
+    right: -74px;
+    top: -10px;
+    width: 0; }
+  h1:after {
+    animation: after-glow 2s ease-out infinite alternate;
+    border-left: 100px solid transparent;
+    border-top: 16px solid #000fff;
+    content: ' ';
+    height: 0;
+    position: absolute;
+    right: -85px;
+    top: 24px;
+    transform: rotate(-47deg);
+    width: 0; }
+
+/* =========================================
+Log in form
+========================================= */
+#fade-box {
+  animation: input-entry 3s ease-in;
+  z-index: 4; }
+
+.login form {
+  animation: form-entry 3s ease-in-out;
+  background: #111;
+  background: linear-gradient(45deg,rgba(104, 104, 107,0.7), rgba(0, 0, 77) 57%);
+  border: 6px solid #00a4a2;
+  box-shadow: 0 0 35px #00fffd;
+  border-radius: 25px;
+  display: inline-block;
+  height: 320px;
+  margin: 200px auto 0;
+  position: relative;
+  z-index: 4;
+  width: 500px;
+  transition: 1s all; }
+  .login form:hover {
+    border: 6px solid #00fffd;
+    box-shadow: 0 0 25px #00fffd;
+    transition: 1s all; }
+.login input {
+  /*background: #222;
+  background: linear-gradient(#333333, #222222);*/
+  background: linear-gradient(45deg,#572663, #B15B60 290%);
+  border: 1px solid #444;
+  border-radius: 20px;
+  box-shadow: 0 2px 0 #000;
+  color: #888;
+  display: block;
+  font-family: 'Cabin', helvetica, arial, sans-serif;
+  font-size: 13px;
+  font-size: 1.3rem;
+  height: 50px;
+  margin: 40px auto 10px;
+  padding: 0 10px;
+  text-shadow: 0 -1px 0 #000;
+  width: 300px; }
+.login input:focus {
+  animation: box-glow 1s ease-out infinite alternate;
+  background: #0B4252;
+  background: linear-gradient(#333933, #222922);
+  border-color: #467dea;
+  box-shadow: 0 0 5px rgba(0, 255, 253, 0.2), inset 0 0 5px rgba(0, 255, 253, 0.1), 0 2px 0 black;
+  color: #efe;
+  outline: none; }
+.login input:invalid {
+  border: 2px solid red;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.2), inset 0 0 5px rgba(255, 0, 0, 0.1), 0 2px 0 black; }
+.login button {
+  animation: input-entry 3s ease-in;
+  background: #222;
+  background: linear-gradient(#333333, #222222);
+  box-sizing: content-box;
+  border: 5px solid #444;
+  border-left-color: #000;
+  border-radius: 25px;
+  box-shadow: 0 2px 10px #fff;
+  color: #fff;
+  display: block;
+  font-family: 'Cabin', helvetica, arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  height: 40px;
+  line-height: 40px;
+  margin: 50px auto;
+  padding: 0;
+  position: relative;
+  text-shadow: 0 -1px 0 #000;
+  width: 200px;
+  transition: 1s all; }
+  .login button::after {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  height: 100%;
+  left: -35%;
+  top: 0;
+  transform: skew(50deg);
+  transition-duration: 0.6s;
+  transform-origin: top left;
+  width: 0;
+  }
+.login button:hover,
+.login button:focus {
+  background: #000;
+  background: linear-gradient(#393939, #000);
+  color: #00fff6;
+  outline: none;
+  transition: 1s all;
+  height: 100%;
+  width: 75%;
+  box-shadow: 2px 5px 3px #fff;
+   }
+.login button:active {
+  background: #292929;
+  background: linear-gradient(#393939, #292929);
+  box-shadow: 0 1px 0 #000, inset 1px 0 1px #222;
+  top: 1px; }
+
+/* =========================================
+Spinner
+========================================= */
+#circle1 {
+  animation: circle1 4s linear infinite, circle-entry 6s ease-in-out;
+  background-color: rgba(0,0,0,.5);
+  
+  border-radius: 50%;
+  border: 10px solid #68686b;
+  box-shadow: 0 0 0 2px black, 0 0 0 6px #467dea;
+  height: 600px;
+  width: 600px;
+  position: absolute;
+  top: 35px;
+  left: 47%;
+  margin-left: -250px;
+  overflow: hidden;
+  z-index: 1; }
+
+#inner-cirlce1 {
+  background-color: rgba(0,0,0,.1);
+  border-radius: 50%;
+  border: 36px solid #0000ff;
+  height: 544px;
+  width: 544px;
+  margin: 10px; }
+  #inner-cirlce1:before {
+    content: ' ';
+    width: 240px;
+    height: 480px;
+    background-color: rgba(0,0,0,.1);
+    background: linear-gradient(-45deg,#000,#000 100%);
+    position: absolute;
+    top: 0;
+    left: 0; }
+  #inner-cirlce1:after {
+    content: ' ';
+    width: 480px;
+    height: 240px;
+    background-color: rgba(0,0,0,.1);
+    background: linear-gradient(-45deg,#000,#000 100%);
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+/* =========================================
+Animation Keyframes
+========================================= */
+@keyframes logo-entry {
+  0% {
+    opacity: 0; }
+
+  80% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@keyframes circle-entry {
+  0% {
+    opacity: 0; }
+
+  20% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@keyframes input-entry {
+  0% {
+    opacity: 0; }
+
+  90% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+@keyframes form-entry {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    padding: 0; }
+
+  20% {
+    height: 0;
+    border: 1px solid #00a4a2;
+    width: 0;
+    opacity: 0;
+    padding: 0; }
+
+  40% {
+    width: 0;
+    height: 220px;
+    border: 6px solid #00a4a2;
+    opacity: 1;
+    padding: 0; }
+
+  100% {
+    height: 320px;
+    width: 500px; } }
+@keyframes box-glow {
+  0% {
+    border-color: #2395db;
+    box-shadow: 0 0 5px rgba(0, 255, 253, 0.2), inset 0 0 5px rgba(0, 255, 253, 0.1), 0 2px 0 black; }
+
+  100% {
+    border-color: #467dea;
+    box-shadow: 0 0 20px rgba(0, 255, 253, 0.6), inset 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 black; } }
+@keyframes text-glow {
+  0% {
+    color: #6dbde8;
+    text-shadow: 0 0 10px #000, 0 0 20px #000, 0 0 30px #000, 0 0 40px #000, 0 0 50px #000, 0 0 60px #000, 0 0 70px #000; }
+
+  100% {
+    color: #00fffc;
+    text-shadow: 0 0 20px rgba(0, 255, 253, 0.6), 0 0 10px rgba(0, 255, 253, 0.4), 0 2px 0 black; } }
+@keyframes before-glow {
+  0% {
+    border-bottom: 10px solid #000fed; }
+
+  100% {
+    border-bottom: 10px solid #37ebff; } }
+@keyframes after-glow {
+  0% {
+    border-top: 16px solid #000fed; }
+
+  100% {
+    border-top: 16px solid #37ebff; } }
+@keyframes circle1 {
+  0% {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+
+  100% {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
