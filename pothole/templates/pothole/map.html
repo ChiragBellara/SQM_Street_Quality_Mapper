@@ -1,64 +1,60 @@
-{% extends 'pothole/base.html' %}
-{% load static %}
-{% block map %}active{% endblock %}
-{% block content %}
+{% extends 'pothole/base.html' %} {% load static %} {% block map %}active{%
+endblock %} {% block content %}
 <!-- Page-header end -->
 <div class="pcoded-inner-content">
-    <div class="main-body">
-        <div class="page-wrapper">
-            <!-- Page body start -->
-            <div class="page-body">
-                <div class="row">
-                    <div class="col-lg-12 col-xl-12">
-                        <!-- Basic map start -->
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Basic</h5>
-                                <span>Map shows places around the world</span>
-                            </div>
-                            <div class="card-block">
-                                <div id="map" class="set-map"></div>
-                            </div>
-                        </div>
-                        <!-- Basic map end -->
-                    </div>
-                    
-                    <!-- </div> -->
-                </div>
+  <div class="main-body">
+    <div class="page-wrapper">
+      <!-- Page body start -->
+      <div class="page-body">
+        <div class="row">
+          <div class="col-lg-12 col-xl-12">
+            <!-- Basic map start -->
+            <div class="card">
+              <div class="card-header">
+                <h5>Basic</h5>
+                <span>Map shows places around the world</span>
+              </div>
+              <div class="card-block">
+                <div id="map" class="set-map"></div>
+              </div>
             </div>
-        </div>
-        <!-- Main-body end -->
+            <!-- Basic map end -->
+          </div>
 
-        <div id="styleSelector">
-
+          <!-- </div> -->
         </div>
+      </div>
     </div>
- </div>
- <script>
-   
-     function initMap() {
-       var map = new google.maps.Map(document.getElementById('map'), {
-         zoom: 50,
-         center: {lat: 19.18744, lng: 72.97267},
-         mapTypeId: 'terrain'
-       });
-       {% for item in locations%}
-         var flightPlanCoordinates = {{ item.location|safe }};
-         
-         var flightPath = new google.maps.Polyline({
-           path: flightPlanCoordinates,
-           geodesic: true,
-           strokeColor: '{{ item.color }}',
-           strokeOpacity: 1.0,
-           strokeWeight: 8,
-         });
-         flightPath.setMap(map);
-       {% endfor %}
-     }
- 
-       
-     </script>
-     <script async defer
-     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqvGJptlGEn2obUoKnhGVkJp09rahvXlU&callback=initMap">
-     </script>
-{% endblock content %}   
+    <!-- Main-body end -->
+
+    <div id="styleSelector"></div>
+  </div>
+</div>
+<script>
+
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 50,
+      center: {lat: 19.18744, lng: 72.97267},
+      mapTypeId: 'terrain'
+    });
+    {% for item in locations%}
+      var flightPlanCoordinates = {{ item.location|safe }};
+
+      var flightPath = new google.maps.Polyline({
+        path: flightPlanCoordinates,
+        geodesic: true,
+        strokeColor: '{{ item.color }}',
+        strokeOpacity: 1.0,
+        strokeWeight: 8,
+      });
+      flightPath.setMap(map);
+    {% endfor %}
+  }
+</script>
+<script
+  async
+  defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqvGJptlGEn2obUoKnhGVkJp09rahvXlU&callback=initMap"
+></script>
+{% endblock content %}
