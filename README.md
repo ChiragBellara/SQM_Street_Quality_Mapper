@@ -79,12 +79,37 @@ Indicating the intensity of potholes with the following color codes:
 - Orange: Medium Priority
 - Yellow: Lower-Medium Priority
 - Green: Lower Priority
+<div align="center">
+</br>
+  <img width = "720" alt="image" src="https://github.com/user-attachments/assets/af41ff4b-f747-44de-a3d0-3514c119010e">
+  <div>Map showing multiple color-coded patches of roads.</div>
+</div>
+</br>
+
 
 #### Pothole Locations
 Marked on the map with details like GPS coordinates and timestamps.
+<div align="center">
+</br>
+  <img width = "720" alt="image" src="https://github.com/user-attachments/assets/2b00ee9d-362b-4f9d-b6be-b1fb4cf8f7c2">
+  <div>Map pinpointing locations of potholes in satellite view.</div>
+</div>
+</br>
+
 #### Cumulative Analysis
 Graphical representation of the number and intensity of potholes over time.
-
+<div align="center">
+</br>
+  <img width = "720" alt="image" src="https://github.com/user-attachments/assets/991ee1bf-5d0a-4fba-be7e-cce06fc0c0ca">
+  <div>Accelerometer readings with timestamps. These are used to identify occurrences of potholes.</div>
+  </br>
+  <img width = "720" alt="image" src="https://github.com/user-attachments/assets/0e3ad41e-a636-461b-9afb-df60dd0b08a6">
+  <div>Ride Quality Score (RQS) computed according to the accelerometer readings. The higher the RQS, more is the intensity of the pothole.</div>
+  </br>
+  <img width = "720" alt="image" src="https://github.com/user-attachments/assets/a72a6b0c-2604-4037-ab1e-2e8bfe5b2a35">
+  <div>Number of potholes identified grouped according to their intensity.</div>
+</div>
+</br>
 
 ## Future Work
 - **Integration with Transport Services:** Expand data collection by collaborating with services like Ola and Uber.
