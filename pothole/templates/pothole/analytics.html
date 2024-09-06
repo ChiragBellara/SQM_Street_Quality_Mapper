@@ -1,128 +1,88 @@
-{% extends 'pothole/base.html' %}
-{% load static %}
-{% block analytics %}active{% endblock %}
-{% block content %}
+{% extends 'pothole/base.html' %} {% load static %} {% block analytics
+%}active{% endblock %} {% block content %}
 <!-- Page-header end -->
 <div class="pcoded-inner-content">
-    <div class="main-body">
-        <div class="page-wrapper">
-            <!-- Page body start -->
-            <div class="page-body">
-                <div class="row">
-                    <div class="col-lg-12 col-xl-12">
-                        <!-- Basic map start -->
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Basic</h5>
-                                <span>Some visualization</span>
-                                <!-- <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/603759/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
-                                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/603759/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
-                                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/603759/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
-                                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/603759/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
-                                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/603759/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
-                                <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/603759/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe> -->
-
-                                <div class="col-lg-12 col-xl-12">
-                                    <canvas id="myChart"></canvas>
-                                </div>
-                                <br><hr><br>
-                                <div class="col-lg-6 col-xl-12">
-                                    <canvas id="myChartride"></canvas>
-                                </div>
-                                <br><hr><br>
-                                <div class="col-lg-6 col-xl-12">
-                                    <canvas id="myChartradar"></canvas>
-                                </div>
-                                
-
-                                <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
-                                <script type="text/javascript" src="{% static 'js/Chart.min.js' %}"></script>
-                                <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-                                <script type="text/javascript">
-                                    $.get('{% url 'pothole:line_chart_json' %}', function(data) {
-                                        var ctx = $("#myChart").get(0).getContext("2d");
-                                        // ctx.canvas.parentNode.style.height = '128px';
-                                        // console.log(data.datasets[0].backgroundColor);
-                                        data.datasets[0].backgroundColor = "rgba(0,0,0,0.8)"
-                                        new Chart(ctx, {
-                                            type: 'line', data: data
-                                        });
-                                    });
-                                </script>
-                                <script type="text/javascript">
-                                    $.get('{% url 'pothole:line_chart_json_ride' %}', function(data) {
-                                        var ctx = $("#myChartride").get(0).getContext("2d");
-                                        // ctx.canvas.parentNode.style.height = '128px';
-                                        // console.log(data.datasets[0].backgroundColor);
-                                        data.datasets[0].backgroundColor = "rgba(0,0,100,0.678912345)"
-                                        new Chart(ctx, {
-                                            type: 'line', data: data
-                                        });
-                                    });
-                                </script>
-
-                                <script type="text/javascript">
-                                    $.get('{% url 'pothole:radar_chart_json' %}', function(data) {
-                                        var ctx = $("#myChartradar").get(0).getContext("2d");
-                                        // ctx.canvas.parentNode.style.height = '128px';
-                                        // console.log(data.datasets[0].backgroundColor);
-                                        data.datasets[0].backgroundColor = "rgba(0,0,0,0.8)"
-                                        new Chart(ctx, {
-                                            type: 'bar', data: data
-                                        });
-                                    });
-                                </script>
-
-                                <!--div id="map"></div-->
-                                <!--script>
-                                  
-                                      function initMap() {
-                                        var map = new google.maps.Map(document.getElementById('map'), {
-                                          zoom: 25,
-                                          center: {lat: 19.18744, lng: 72.97267},
-                                          mapTypeId: 'terrain'
-                                        });
-                                        {% for item in locations%}
-                                          var flightPlanCoordinates = {{ item.location|safe }};
-                                          
-                                          var flightPath = new google.maps.Polyline({
-                                            path: flightPlanCoordinates,
-                                            geodesic: true,
-                                            strokeColor: '{{ item.color }}',
-                                            strokeOpacity: 1.0,
-                                            strokeWeight: 10,
-                                          });
-                                          flightPath.setMap(map);
-                                        {% endfor %}
-                                      }
-                                
-                                      
-                                </script>
-                                <script async defer
-                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqvGJptlGEn2obUoKnhGVkJp09rahvXlU&callback=initMap">
-                                </script-->
-                            </div>
-                        </div>
-                        <!-- Basic map end -->
-                    </div>
-                    <!-- <div class="col-lg-12 col-xl-6"> -->
-                        <!-- Markers map start -->
-                       <!--  <div class="card">
-                            <div class="card-header">
-                                <h5>Markers</h5>
-                                <span>Maps shows <code>location</code> of the place</span>
-                            </div>
-                            <div class="card-block">
-                                <div id="markers-map" class="set-map"></div>
-                            </div>
-                        </div> -->
-                        <!-- Markers map end -->
-                    
-                    <!-- </div> -->
+  <div class="main-body">
+    <div class="page-wrapper">
+      <!-- Page body start -->
+      <div class="page-body">
+        <div class="row">
+          <div class="col-lg-12 col-xl-12">
+            <!-- Basic map start -->
+            <div class="card">
+              <div class="card-header">
+                <h5>Basic</h5>
+                <span>Some visualization</span>
+                <div class="col-lg-12 col-xl-12">
+                  <canvas id="myChart"></canvas>
                 </div>
+                <br />
+                <hr />
+                <br />
+                <div class="col-lg-6 col-xl-12">
+                  <canvas id="myChartride"></canvas>
+                </div>
+                <br />
+                <hr />
+                <br />
+                <div class="col-lg-6 col-xl-12">
+                  <canvas id="myChartradar"></canvas>
+                </div>
+
+                <script
+                  type="text/javascript"
+                  src="http://code.jquery.com/jquery-1.10.0.min.js"
+                ></script>
+                <script
+                  type="text/javascript"
+                  src="{% static 'js/Chart.min.js' %}"
+                ></script>
+                <script
+                  type="text/javascript"
+                  src="https://canvasjs.com/assets/script/canvasjs.min.js"
+                ></script>
+                <script type="text/javascript">
+                  $.get('{% url 'pothole:line_chart_json' %}', function(data) {
+                      var ctx = $("#myChart").get(0).getContext("2d");
+                      // ctx.canvas.parentNode.style.height = '128px';
+                      // console.log(data.datasets[0].backgroundColor);
+                      data.datasets[0].backgroundColor = "rgba(0,0,0,0.8)"
+                      new Chart(ctx, {
+                          type: 'line', data: data
+                      });
+                  });
+                </script>
+                <script type="text/javascript">
+                  $.get('{% url 'pothole:line_chart_json_ride' %}', function(data) {
+                      var ctx = $("#myChartride").get(0).getContext("2d");
+                      // ctx.canvas.parentNode.style.height = '128px';
+                      // console.log(data.datasets[0].backgroundColor);
+                      data.datasets[0].backgroundColor = "rgba(0,0,100,0.678912345)"
+                      new Chart(ctx, {
+                          type: 'line', data: data
+                      });
+                  });
+                </script>
+
+                <script type="text/javascript">
+                  $.get('{% url 'pothole:radar_chart_json' %}', function(data) {
+                      var ctx = $("#myChartradar").get(0).getContext("2d");
+                      // ctx.canvas.parentNode.style.height = '128px';
+                      // console.log(data.datasets[0].backgroundColor);
+                      data.datasets[0].backgroundColor = "rgba(0,0,0,0.8)"
+                      new Chart(ctx, {
+                          type: 'bar', data: data
+                      });
+                  });
+                </script>
+              </div>
             </div>
+            <!-- Basic map end -->
+          </div>
         </div>
-        <!-- Main-body end -->
+      </div>
     </div>
- </div>
-{% endblock content %}   
+    <!-- Main-body end -->
+  </div>
+</div>
+{% endblock content %}
