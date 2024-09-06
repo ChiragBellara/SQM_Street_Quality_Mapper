@@ -1,7 +1,7 @@
 <a id="readme-top"></a>
 
 <div align="center">
-  <h1 align="center">SQM - Street Quality Mapper</h1>
+  <h1 align="center">Street Quality Mapper (SQM)</h1>
   <p align="center">
     eYantra Ideas Competition, IIT Bombay, April 2019
     <br />
@@ -20,38 +20,74 @@
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
 
 ## Overview
-Street Quality Mapper (SQM) is an IoT-based system designed to detect potholes and assess overall street quality in real time. It uses signal processing techniques to analyze acceleration fluctuations and determine road quality, providing a comprehensive map of a city's street surface conditions.
-
-The system employs vehicle-mounted sensors to collect data, which is then processed to identify road abnormalities and quantify road quality. SQM offers a cost-effective alternative to manual road inspections, enabling efficient prioritization of road repairs. By providing a holistic view of road infrastructure health, SQM supports urban planners, transportation departments, and emergency services in improving road safety and maintenance strategies.
+Street Quality Mapper (SQM) is a system designed to identify potholes and map street quality in real-time. The system employs vehicle-mounted sensors to collect data, which is then processed to identify road abnormalities and quantify road quality. SQM offers a cost-effective alternative to manual road inspections providing a comprehensive map of a city's street surface quality and enabling authorities to monitor road conditions, make informed decisions, and improve street quality.
 
 ## Features
-- Real-time pothole detection
-- Street quality assessment
-- GPS-based location tracking
-- Color-coded street quality mapping
-- Cumulative analysis of pothole data
-- Web interface for data visualization
+- **Real-time pothole detection:** Utilizes a 6-axis accelerometer and GPS module to detect potholes based on acceleration fluctuations.
+- **Street quality assessment:** Streets are color-coded based on road quality, with potholes plotted on the map for easy visualization.
+- **Ride Quality Score:** Calculates a 'Ride Quality Score' based on acceleration data, helping to classify road conditions.
+- **Web Interface:** Provides a user-friendly interface with color-coded maps and graphical representations of street quality data.
 
-## Components
+## Implementation
 ### Hardware Components
-- 6-axis accelerometer (MPU6050)
-- GPS module (Neo6Mv2)
-- NodeMCU controller
-- Raspberry Pi 3B+
-- WiFi module
+- **NodeMCU with Accelerometer (MPU6050):** Collects acceleration data and sends it to the cloud via a WiFi module.
+- **Raspberry Pi 3B+ with GPS Module (Neo6Mv2):** Collects location data and transmits it to the cloud for further processing.
+
 ### Software Components
-- Data collection and processing scripts
-- Pothole detection algorithm
-- Web interface for data visualization
+- **Data Processing:** Data collected from the sensors is cleaned, synchronized, and processed to detect potholes using a robust peak detection algorithm based on z-scores.
+- **Ride Quality Calculation:** The system calculates the Ride Quality Score using the formula:</br>```RideQualityScore = sqrt(x^2 + y^2 + z^2)```</br>
+where x, y, and z are the acceleration values along the three axes.
+- **Web Interface:** Displays color-coded maps and provides detailed information on potholes, including timestamps and GPS coordinates.
 
 ## How It Works
 <div>
   <ol>
     <b><li>Data Collection</li></b>
     Accelerometer data is collected using MPU6050 sensors placed near the axles of the vehicle. GPS data is collected using the Neo6Mv2 module connected to a Raspberry Pi 3B+. Data is sent to a cloud platform (Firebase) in real time.
+    <div align="center">
+      </br>
+      <img width = "720" alt="image" src="https://github.com/user-attachments/assets/0da9034d-5e65-48f1-9ae8-c3c0d1ae1b10">
+      <div>Data Collection framework of Street Quality Mapper system.</div>
+    </div>
+    </br>
     <b><li>Data Processing</li></b>
     Collected data is cleaned and synchronized. A robust peak detection algorithm is applied to identify potholes. Ride Quality Score is calculated based on acceleration values.
     <b><li>Visualization</li></b>
     Streets are color-coded on maps based on their quality. Potholes are plotted on street maps with specific locations. Graphical representations show the number and intensity of potholes.
   </ol>
 </div>
+
+## Installation and Setup
+- **Hardware Setup:** Attach the accelerometer near the axle of the vehicle's tires and the GPS module in a secure location connected to the Raspberry Pi 3B+.
+- **Software Setup:**
+  - Install the necessary Python libraries (```pip install -r requirements.txt```).
+  - Set up Firebase for real-time data storage.
+  - Deploy the web interface on a server.
+- **Connectivity:** Ensure a stable internet connection for real-time data transmission to the cloud.
+
+## Usage
+- **Data Collection:** The system automatically collects and sends data to the cloud as the vehicle moves.
+- **Pothole Detection:** The system processes the data in real time, detects potholes, and updates the maps accordingly.
+- **Web Interface:** Access the web interface to view the mapped potholes, color-coded street quality, and detailed reports.
+
+## Results
+The Street Quality Mapper provides:
+
+#### Color-Coded Maps
+Indicating the intensity of potholes with the following color codes:
+- Red: High Priority
+- Orange: Medium Priority
+- Yellow: Lower-Medium Priority
+- Green: Lower Priority
+
+#### Pothole Locations
+Marked on the map with details like GPS coordinates and timestamps.
+#### Cumulative Analysis
+Graphical representation of the number and intensity of potholes over time.
+
+
+## Future Work
+- **Integration with Transport Services:** Expand data collection by collaborating with services like Ola and Uber.
+- **Mobile Sensors:** Replace hardware components with mobile sensors for easier implementation.
+- **Machine Learning Integration:** Use machine learning algorithms to improve pothole detection accuracy.
+- **Community Access:** Make the data publicly accessible to allow community monitoring.
