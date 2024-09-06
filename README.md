@@ -64,6 +64,7 @@ where x, y, and z are the acceleration values along the three axes.
   - Set up Firebase for real-time data storage.
   - Deploy the web interface on a server.
 - **Connectivity:** Ensure a stable internet connection for real-time data transmission to the cloud.
+- **API Keys:** Add your Google Maps API keys in place of ```{GOOGLE_MAPS_API_KEY}``` in relevant HTML files.
 
 ## Usage
 - **Data Collection:** The system automatically collects and sends data to the cloud as the vehicle moves.
