@@ -73,6 +73,15 @@ where x, y, and z are the acceleration values along the three axes.
 ## Results
 The Street Quality Mapper provides:
 
+#### Pothole List
+A list of all the potholes recorded 
+<div align="center">
+</br>
+  <img width = "720" alt="image" src="https://github.com/user-attachments/assets/193014dd-ccda-4cd4-afc4-f1384f44a0a9">
+  <div>A list of all the potholes recorded along with their time of detection, location, ride quality score, and intensity.</div>
+</div>
+</br>
+
 #### Color-Coded Maps
 Indicating the intensity of potholes with the following color codes:
 - Red: High Priority
@@ -85,7 +94,6 @@ Indicating the intensity of potholes with the following color codes:
   <div>Map showing multiple color-coded patches of roads.</div>
 </div>
 </br>
-
 
 #### Pothole Locations
 Marked on the map with details like GPS coordinates and timestamps.
