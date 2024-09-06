@@ -28,7 +28,6 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -42,13 +41,12 @@ INSTALLED_APPS = [
     'chartjs',
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -135,10 +133,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Datasets')
+MEDIA_URL = '/Datasets/'
 
 LOGIN_REDIRECT_URL = 'dashboard'
-APPEND_SLASH=True
+APPEND_SLASH = True
 
 LOGOUT_REDIRECT_URL = 'index'
